@@ -26,7 +26,11 @@ public class Util {
     }
 
     public static List<Integer> sortIntegers(List<String> input) {
-        return null;    }
+        return input.stream()
+                .map(Integer::parseInt)
+                .sorted()
+                .collect(Collectors.toList());
+    }
 
     public static List<Integer> sortIntegersDescending(List<String> input) {
         return null;    }
