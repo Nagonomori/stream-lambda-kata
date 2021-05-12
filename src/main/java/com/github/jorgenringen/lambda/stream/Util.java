@@ -8,11 +8,16 @@ import java.util.stream.Collectors;
 public class Util {
 
     public static List<String> mapToUppercase(List<String> input) {
-        return input.stream().map(s -> s.toUpperCase()).collect(Collectors.toList());
+        return input.stream()
+                .map(s -> s.toUpperCase())
+                .collect(Collectors.toList());
     }
 
     public static List<String> removeElementsWithMoreThanFourCharacters(List<String> input) {
-        return null;    }
+        return input.stream()
+                .filter(s -> s.length() <= 3)
+                .collect(Collectors.toList());
+    }
 
     public static List<String> sortStrings(List<String> input) {
         return null;    }
