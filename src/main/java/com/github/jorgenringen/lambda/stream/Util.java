@@ -41,7 +41,9 @@ public class Util {
     }
 
     public static Integer sum(List<Integer> numbers) {
-        return null;    }
+        return numbers.stream()
+                .reduce(0, Integer::sum);
+    }
 
     public static List<String> flattenToSingleCollection(List<List<String>> input) {
         return null;
