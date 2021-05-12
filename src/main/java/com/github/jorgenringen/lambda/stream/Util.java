@@ -62,7 +62,11 @@ public class Util {
     }
 
     public static String findNameOfOldestPerson(List<Person> input) {
-        return null;    }
+        return input.stream()
+                .max(Comparator.comparing(Person::getAge))
+                .map(Person::getName)
+                .orElse("");
+    }
 
     public static List<String> filterPeopleLessThan18YearsOld(List<Person> input) {
         return null;    }
