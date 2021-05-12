@@ -69,7 +69,11 @@ public class Util {
     }
 
     public static List<String> filterPeopleLessThan18YearsOld(List<Person> input) {
-        return null;    }
+        return input.stream()
+                .filter(p -> p.getAge() < 18)
+                .map(p -> p.getName())
+                .collect(Collectors.toList());
+    }
 
     public static IntSummaryStatistics getSummaryStatisticsForAge(List<Person> input) {
         return null;    }
