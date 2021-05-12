@@ -13,7 +13,7 @@ public class Util {
                 .collect(Collectors.toList());
     }
 
-    public static List<String> removeElementsWithMoreThanFourCharacters(List<String> input) {
+    public static List<String> removeElementsWithMoreThanThreeCharacters(List<String> input) {
         return input.stream()
                 .filter(s -> s.length() <= 3)
                 .collect(Collectors.toList());
