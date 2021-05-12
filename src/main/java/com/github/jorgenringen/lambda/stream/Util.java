@@ -20,7 +20,10 @@ public class Util {
     }
 
     public static List<String> sortStrings(List<String> input) {
-        return null;    }
+        return input.stream()
+                .sorted()
+                .collect(Collectors.toList());
+    }
 
     public static List<Integer> sortIntegers(List<String> input) {
         return null;    }
