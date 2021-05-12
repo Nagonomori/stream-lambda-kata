@@ -1,5 +1,6 @@
 package com.github.jorgenringen.lambda.stream;
 
+import java.util.Comparator;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +34,11 @@ public class Util {
     }
 
     public static List<Integer> sortIntegersDescending(List<String> input) {
-        return null;    }
+        return input.stream()
+                .map(Integer::parseInt)
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+    }
 
     public static Integer sum(List<Integer> numbers) {
         return null;    }
