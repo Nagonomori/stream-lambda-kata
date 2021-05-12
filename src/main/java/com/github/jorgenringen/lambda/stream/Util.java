@@ -1,9 +1,6 @@
 package com.github.jorgenringen.lambda.stream;
 
-import java.util.Comparator;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Util {
@@ -46,7 +43,9 @@ public class Util {
     }
 
     public static List<String> flattenToSingleCollection(List<List<String>> input) {
-        return null;
+        return input.stream()
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
     }
 
     public static String separateNamesByComma(List<Person> input) {
