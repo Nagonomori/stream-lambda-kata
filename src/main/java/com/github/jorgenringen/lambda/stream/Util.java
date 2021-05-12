@@ -3,11 +3,13 @@ package com.github.jorgenringen.lambda.stream;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Util {
 
     public static List<String> mapToUppercase(List<String> input) {
-        return null;    }
+        return input.stream().map(s -> s.toUpperCase()).collect(Collectors.toList());
+    }
 
     public static List<String> removeElementsWithMoreThanFourCharacters(List<String> input) {
         return null;    }
