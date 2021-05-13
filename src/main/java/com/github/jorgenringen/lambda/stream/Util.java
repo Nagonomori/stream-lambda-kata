@@ -86,5 +86,7 @@ public class Util {
     }
 
     public static Map<String, List<Person>> partitionByNationality(List<Person> input) {
-        return null;    }
+        return input.stream()
+                .collect(Collectors.groupingBy(Person::getCountry));
+    }
 }
