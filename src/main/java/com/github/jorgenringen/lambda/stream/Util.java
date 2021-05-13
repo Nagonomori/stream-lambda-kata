@@ -51,14 +51,7 @@ public class Util {
     public static String separateNamesByComma(List<Person> input) {
         return input.stream()
                 .map(Person::getName)
-                .reduce("Names: ", (p1, p2) -> p1 + ", " + p2)
-                .replaceFirst(", ",  "")
-                + ".";
-        /**
-         * Ich bin mit dieser Lösung nicht wirklich zufrieden.
-         * Der Punkt kommt mir so angepappt vor.
-         * Gibt es da einen "eleganteren" Weg den Punkt hinzuzufügen und das erste Komma zu entfernen?
-         */
+                .collect(Collectors.joining(", ", "Names: ", "."));
     }
 
     public static String findNameOfOldestPerson(List<Person> input) {
