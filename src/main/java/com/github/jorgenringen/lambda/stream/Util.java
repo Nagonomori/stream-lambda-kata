@@ -81,7 +81,9 @@ public class Util {
     }
 
     public static Map<Boolean, List<Person>> partitionAdults(List<Person> input) {
-        return null;    }
+        return input.stream()
+                .collect(Collectors.groupingBy(p -> p.getAge() >= 18));
+    }
 
     public static Map<String, List<Person>> partitionByNationality(List<Person> input) {
         return null;    }
