@@ -7,7 +7,7 @@ public class Util {
 
     public static List<String> mapToUppercase(List<String> input) {
         return input.stream()
-                .map(s -> s.toUpperCase())
+                .map(String::toUpperCase)
                 .collect(Collectors.toList());
     }
 
@@ -71,12 +71,14 @@ public class Util {
     public static List<String> filterPeopleLessThan18YearsOld(List<Person> input) {
         return input.stream()
                 .filter(p -> p.getAge() < 18)
-                .map(p -> p.getName())
+                .map(Person::getName)
                 .collect(Collectors.toList());
     }
 
     public static IntSummaryStatistics getSummaryStatisticsForAge(List<Person> input) {
-        return null;    }
+        return input.stream()
+        .collect(Collectors.summarizingInt(Person::getAge));
+    }
 
     public static Map<Boolean, List<Person>> partitionAdults(List<Person> input) {
         return null;    }
